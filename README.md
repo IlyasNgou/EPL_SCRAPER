@@ -52,7 +52,7 @@ Alternatively, you can use Docker to avoid manual setup.
    ```
 3. Download ChromeDriver and add the path to the extract_matches function (replace the path in your code).
    
-4.Run the script:
+4. Run the script:
    ```bash
    python main.py
    ```
