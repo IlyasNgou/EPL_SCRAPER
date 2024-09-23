@@ -1,0 +1,39 @@
+FROM python:3.10-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Install system dependencies for Selenium and Chrome
+RUN apt-get update && apt-get install -y \
+    wget \
+    unzip \
+    curl \
+    gnupg \
+    libgconf-2-4 \
+    libnss3 \
+    libxss1 \
+    libappindicator1 \
+    libindicator7 \
+    fonts-liberation \
+    libasound2 \
+    xdg-utils \
+    libgbm-dev \
+    libgtk-3-0
+
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+    dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
+
+RUN CHROMEDRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE` && \
+    wget -N https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip && \
+    unzip chromedriver_linux64.zip && \
+    mv chromedriver /usr/local/bin/chromedriver && \
+    chmod +x /usr/local/bin/chromedriver
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+ENV CHROME_OPTIONS='--headless --no-sandbox --disable-dev-shm-usage'
+
+CMD ["python", "your_script.py"]
