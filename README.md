@@ -31,10 +31,30 @@ Alternatively, you can use Docker to avoid manual setup.
    ```bash
    cd epl-scraper
    ```
-   
+3. Build the Docker image:   
    ```bash
    docker build -t epl-scraper .
    ```
+4. Run the scraper:
    ```bash
    docker run -v $(pwd)/outputs:/app/outputs epl-scraper
    ```
+### Option 2: Running Locally
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/epl-scraper.git
+   cd epl-scraper
+   ```
+2. Install the required Python packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Download ChromeDriver and add the path to the extract_matches function (replace the path in your code).
+   
+4.Run the script:
+   ```bash
+   python main.py
+   ```
+
+
