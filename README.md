@@ -26,5 +26,15 @@ Alternatively, you can use Docker to avoid manual setup.
 2. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/epl-scraper.git
+   ```
    
+   ```bash
    cd epl-scraper
+   ```
+   
+   ```bash
+   docker build -t epl-scraper .
+   ```
+   ```bash
+   docker run -v $(pwd)/outputs:/app/outputs epl-scraper
+   ```
