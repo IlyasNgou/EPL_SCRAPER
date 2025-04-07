@@ -7,18 +7,18 @@ import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
 
 
-# from main import extract_matches
+from main import extract_matches
 
-# def test_extract_matches_runs():
-#     try:
-#         extract_matches(1)  =
-#         assert True
-#     except Exception as e:
-#         assert False, f"Script failed with error: {e}"
+def test_extract_matches_runs():
+    try:
+        extract_matches(1)  =
+        assert True
+    except Exception as e:
+        assert False, f"Script failed with error: {e}"
 
 
-from mains import add
+# from mains import add
 
-def test_add():
-    assert add(2, 3) == 5
-    assert add(-1, 1) == 0
+# def test_add():
+#     assert add(2, 3) == 5
+#     assert add(-1, 1) == 0
