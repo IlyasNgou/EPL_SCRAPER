@@ -1,6 +1,6 @@
 # tests/test_basic.py
 
-from main_script import extract_matches
+from main import extract_matches
 
 def test_extract_matches_runs():
     try:
