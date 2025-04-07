@@ -17,8 +17,3 @@ def test_extract_matches_runs():
         assert False, f"Script failed with error: {e}"
 
 
-# from mains import add
-
-# def test_add():
-#     assert add(2, 3) == 5
-#     assert add(-1, 1) == 0
