@@ -1,6 +1,6 @@
 # tests/test_basic.py
 
-from main import extract_matches
+from EPL_SCRAPER.main import extract_matches
 
 def test_extract_matches_runs():
     try:
