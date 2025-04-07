@@ -23,14 +23,14 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-
-    - name: 🧹 Lint with flake8
-      run: |
-        flake8 . --count --exit-zero --statistics
-
+        
     - name: 🎨 Format check with black
       run: |
         black .
+        
+    - name: 🧹 Lint with flake8
+      run: |
+        flake8 . --count --exit-zero --statistics
 
     - name: ✅ Run tests with pytest
       run: |
