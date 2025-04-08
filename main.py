@@ -71,9 +71,9 @@ def extract_matches(number):
             score_table = select_season(driver, index)
             print("dropdown_clicked")
 
-            epl = []
+            epl_data = []
 
-            for i in range(38):  # Number of rounds in EPL
+            for i in range(38):  
                 try:
                     journee = score_table.find_element(By.CLASS_NAME, "dday").text
                     liste = score_table.find_element(By.CLASS_NAME, "list")
@@ -102,7 +102,7 @@ def extract_matches(number):
                                     else "L" if home_score < visitor_score else "D"
                                 )
 
-                                epl.append(
+                                epl_data.append(
                                     {
                                         "competition": "Premier League",
                                         "round": journee,
@@ -133,9 +133,9 @@ def extract_matches(number):
             output_dir = "outputs"
             os.makedirs(output_dir, exist_ok=True)
             output_path = os.path.join(output_dir, f"EPL_{season_text}.csv")
-            pd.DataFrame(epl).to_csv(output_path, index=False)
+            pd.DataFrame(epl_data).to_csv(output_path, index=False)
 
-            print(f"Collected {len(epl)} matches for season {season_text}")
+            print(f"Collected {len(epl_data)} matches for season {season_text}")
 
         driver.quit()
 
