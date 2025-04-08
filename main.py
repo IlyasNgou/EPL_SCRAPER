@@ -143,4 +143,4 @@ def extract_matches(number):
         print(f"An error occurred during the execution: {e}")
 
 
-extract_matches(6)
+extract_matches(1)
